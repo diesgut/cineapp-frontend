@@ -27,6 +27,8 @@ import { Not403Component } from './pages/not403/not403.component';
 import { ConfiguracionComponent } from './pages/configuracion/configuracion.component';
 import { ConfiguracionDialogoComponent } from './pages/configuracion/configuracion-dialogo/configuracion-dialogo.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { RolComponent } from './pages/rol/rol.component';
+import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 
 export function tokenGetter() {
   let tk = JSON.parse(sessionStorage.getItem(environment.TOKEN_NAME));
@@ -52,7 +54,9 @@ export function tokenGetter() {
     NuevoComponent,
     Not403Component,
     ConfiguracionComponent,
-    ConfiguracionDialogoComponent
+    ConfiguracionDialogoComponent,
+    RolComponent,
+    RolEdicionComponent
   ],
   entryComponents: [
     GeneroDialogoComponent, ComidaDialogoComponent, ConsultaDialogoComponent, ConfiguracionDialogoComponent

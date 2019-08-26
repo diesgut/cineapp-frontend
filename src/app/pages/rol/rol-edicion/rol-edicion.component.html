@@ -1,0 +1,30 @@
+<mat-card>Ingrese los datos del Rol</mat-card>
+
+<form class="example-container" [formGroup]="form" #frmRol="ngForm" (ngSubmit)="operar()">
+
+  <div [hidden]="true">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="ID" required formControlName="idRol">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-full-width">
+    <div *ngIf="f.nombre.errors?.required" class="invalido">Nombre es requerido</div>
+    <input matInput placeholder="Nombre" required formControlName="nombre">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <div *ngIf="f.descripcion.errors?.required" class="invalido">Descripción requerida</div>
+    <input matInput placeholder="Descripción" required formControlName="descripcion">
+  </mat-form-field>
+
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="frmRol.invalid">
+    <mat-icon>done</mat-icon>
+    <span>Aceptar</span>
+  </button>
+  <button mat-raised-button color="accent" routerLink='/rol' type="button">
+    <mat-icon>close</mat-icon>
+    <span>Cancelar</span>
+  </button>
+</form>

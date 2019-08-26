@@ -12,6 +12,8 @@ import { PeliculaComponent } from './pages/pelicula/pelicula.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GeneroComponent } from './pages/genero/genero.component';
+import { RolComponent } from './pages/rol/rol.component';
+import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 
 const routes: Routes = [
   {
@@ -29,7 +31,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'not-403', component: Not403Component },
   { path: 'nuevo-usuario', component: NuevoComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'rol', component: RolComponent, children: [
+      { path: 'nuevo', component: RolEdicionComponent },
+      { path: 'edicion/:id', component: RolEdicionComponent },
+    ], canActivate: [GuardService]
+  }
 ];
 
 @NgModule({
