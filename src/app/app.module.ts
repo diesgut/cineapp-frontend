@@ -29,6 +29,8 @@ import { ConfiguracionDialogoComponent } from './pages/configuracion/configuraci
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { RolComponent } from './pages/rol/rol.component';
 import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
 
 export function tokenGetter() {
   let tk = JSON.parse(sessionStorage.getItem(environment.TOKEN_NAME));
@@ -56,7 +58,9 @@ export function tokenGetter() {
     ConfiguracionComponent,
     ConfiguracionDialogoComponent,
     RolComponent,
-    RolEdicionComponent
+    RolEdicionComponent,
+    MenuComponent,
+    MenuEdicionComponent
   ],
   entryComponents: [
     GeneroDialogoComponent, ComidaDialogoComponent, ConsultaDialogoComponent, ConfiguracionDialogoComponent

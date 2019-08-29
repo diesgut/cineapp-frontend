@@ -1,36 +1,41 @@
-<mat-toolbar>Roles</mat-toolbar>
+<mat-toolbar>Menus</mat-toolbar>
 
 <router-outlet></router-outlet>
 
 <div class="example-header">
   <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Roles">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar Menus">
   </mat-form-field>
 </div>
 
 <mat-table [dataSource]="dataSource" matSort>
-  <ng-container matColumnDef="idRol">
+  <ng-container matColumnDef="idMenu">
     <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.idRol}} </mat-cell>
+    <mat-cell *matCellDef="let row"> {{row.idMenu}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="icono">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Icono </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.icono}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="nombre">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Pelicula </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.nombre}}</mat-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.nombre}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="descripcion">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.descripcion}} </mat-cell>
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Url </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.url}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="acciones">
     <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
     <mat-cell *matCellDef="let row">
-      <button mat-icon-button color="primary" [routerLink]="['edicion', row.idRol]">
+      <button mat-icon-button color="primary" [routerLink]="['edicion', row.idMenu]">
         <mat-icon>ballot</mat-icon>
       </button>
-      <button mat-icon-button color="accent" (click)="eliminar(row.idRol)">
+      <button mat-icon-button color="accent" (click)="eliminar(row.idMenu)">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-cell>
@@ -42,6 +47,6 @@
 
 <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" [length]="cantidad"></mat-paginator>
 
-<button mat-fab color="accent" style="float: right" routerLink="/rol/nuevo">
+<button mat-fab color="accent" style="float: right" routerLink="/menu/nuevo">
   <mat-icon>create</mat-icon>
 </button>
