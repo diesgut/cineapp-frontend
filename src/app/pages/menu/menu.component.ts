@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort, MatSnackBar } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort, MatSnackBar,MatDialog } from '@angular/material';
 import { Rol } from 'src/app/_model/rol';
 import { MenuService } from 'src/app/_service/menu.service';
 import { Menu } from 'src/app/_model/menu';
+import { MenuRolComponent } from './menu-rol/menu-rol.component';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -16,7 +17,7 @@ export class MenuComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private menuService: MenuService, private snackBar: MatSnackBar) {
+  constructor(private menuService: MenuService, private snackBar: MatSnackBar, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -54,6 +55,14 @@ export class MenuComponent implements OnInit {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
+  }
+
+  asignar(menu?: Menu) {
+    let usu = menu != null ? menu : new Menu();
+    this.dialog.open(MenuRolComponent, {
+      width: '612px',
+      data: usu
+    });
   }
 
 }

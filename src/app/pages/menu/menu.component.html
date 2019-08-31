@@ -32,6 +32,9 @@
   <ng-container matColumnDef="acciones">
     <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
     <mat-cell *matCellDef="let row">
+        <button mat-icon-button color="accent" (click)="asignar(row)">
+            <mat-icon>assignment</mat-icon>
+          </button>
       <button mat-icon-button color="primary" [routerLink]="['edicion', row.idMenu]">
         <mat-icon>ballot</mat-icon>
       </button>

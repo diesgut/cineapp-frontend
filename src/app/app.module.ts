@@ -33,6 +33,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { UsuarioRolComponent } from './pages/usuario/usuario-rol/usuario-rol.component';
+import { MenuRolComponent } from './pages/menu/menu-rol/menu-rol.component';
 
 export function tokenGetter() {
   let tk = JSON.parse(sessionStorage.getItem(environment.TOKEN_NAME));
@@ -64,7 +65,8 @@ export function tokenGetter() {
     MenuComponent,
     MenuEdicionComponent,
     UsuarioComponent,
-    UsuarioRolComponent
+    UsuarioRolComponent,
+    MenuRolComponent
   ],
   entryComponents: [
     GeneroDialogoComponent, ComidaDialogoComponent, ConsultaDialogoComponent, ConfiguracionDialogoComponent

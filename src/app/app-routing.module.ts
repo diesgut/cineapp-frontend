@@ -18,6 +18,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { UsuarioRolComponent } from './pages/usuario/usuario-rol/usuario-rol.component';
+import { MenuRolComponent } from './pages/menu/menu-rol/menu-rol.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,8 @@ const routes: Routes = [
     ], canActivate: [GuardService]
   },
   { path: 'usuario', component: UsuarioComponent, canActivate: [GuardService] },
-  { path: 'usuariorol', component: UsuarioRolComponent, canActivate: [GuardService] }
+  { path: 'usuariorol', component: UsuarioRolComponent, canActivate: [GuardService] },
+  { path: 'menurol', component: MenuRolComponent, canActivate: [GuardService] }
 ];
 
 @NgModule({

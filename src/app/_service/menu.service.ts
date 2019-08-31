@@ -47,4 +47,9 @@ export class MenuService {
   eliminar(id: number) {
     return this.http.delete(`${this.urlFull}/${id}`);
   }
+
+  asignarRoles(menu: Menu) {
+    return this.http.put(`${this.urlFull}/asignarroles`, menu);
+  }
+
 }
