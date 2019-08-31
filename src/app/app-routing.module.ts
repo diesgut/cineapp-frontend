@@ -16,6 +16,8 @@ import { RolComponent } from './pages/rol/rol.component';
 import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { UsuarioRolComponent } from './pages/usuario/usuario-rol/usuario-rol.component';
 
 const routes: Routes = [
   {
@@ -44,7 +46,9 @@ const routes: Routes = [
       { path: 'nuevo', component: MenuEdicionComponent },
       { path: 'edicion/:id', component: MenuEdicionComponent },
     ], canActivate: [GuardService]
-  }
+  },
+  { path: 'usuario', component: UsuarioComponent, canActivate: [GuardService] },
+  { path: 'usuariorol', component: UsuarioRolComponent, canActivate: [GuardService] }
 ];
 
 @NgModule({

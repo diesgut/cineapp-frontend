@@ -31,6 +31,8 @@ import { RolComponent } from './pages/rol/rol.component';
 import { RolEdicionComponent } from './pages/rol/rol-edicion/rol-edicion.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuEdicionComponent } from './pages/menu/menu-edicion/menu-edicion.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { UsuarioRolComponent } from './pages/usuario/usuario-rol/usuario-rol.component';
 
 export function tokenGetter() {
   let tk = JSON.parse(sessionStorage.getItem(environment.TOKEN_NAME));
@@ -60,7 +62,9 @@ export function tokenGetter() {
     RolComponent,
     RolEdicionComponent,
     MenuComponent,
-    MenuEdicionComponent
+    MenuEdicionComponent,
+    UsuarioComponent,
+    UsuarioRolComponent
   ],
   entryComponents: [
     GeneroDialogoComponent, ComidaDialogoComponent, ConsultaDialogoComponent, ConfiguracionDialogoComponent
